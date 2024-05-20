@@ -16,11 +16,11 @@ mongoose
 
 //routes
 const productRoutes = require('./routes/product');
-// const orderRoutes = require('./routes/order');
+const orderRoutes = require('./routes/order');
 const userRoutes = require('./routes/user');
 
 app.use('/api/products', productRoutes);
-// app.use('/api/orders', orderRoutes);
+app.use('/api/orders', orderRoutes);
 app.use('/api/users', userRoutes);
 
 
