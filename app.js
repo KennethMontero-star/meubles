@@ -15,11 +15,11 @@ mongoose
   .catch(()=>console.error('Failed to connect to MongoDB'));
 
 //routes
-// const productRoutes = require('./routes/product');
+const productRoutes = require('./routes/product');
 // const orderRoutes = require('./routes/order');
 const userRoutes = require('./routes/user');
 
-// app.use('/api/products', productRoutes);
+app.use('/api/products', productRoutes);
 // app.use('/api/orders', orderRoutes);
 app.use('/api/users', userRoutes);
 
