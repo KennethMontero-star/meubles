@@ -11,6 +11,18 @@ exports.getAllUsers = async (req, res) => {
     }
 };
 
+exports.getUser = async (req,res)=>{
+    try {
+        const {id} = req.params;
+        const user = await User.findById(id);
+        if(!user) return res.status(404).json({message:'User not found'})
+
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+}
+
 // Create a new user
 exports.createUser = async (req, res) => {
     try {
@@ -76,7 +88,7 @@ exports.deleteUser = async (req, res) => {
         if (!user) return res.status(404).json({ message: 'User not found' });
 
         await User.deleteOne({ _id: req.params.id });
-        res.json({ message: 'User deleted successfully' });
+        res.json({ message: 'User deleted successfully',deletedUser:user });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
