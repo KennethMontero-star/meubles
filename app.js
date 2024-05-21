@@ -6,6 +6,8 @@ const app = express();
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+app.use(express.static('public'));
+
 
 //Mongo Database connection
 const dbConnection = process.env.dbConnection;
