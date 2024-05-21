@@ -23,34 +23,6 @@ exports.getUser = async (req,res)=>{
     }
 }
 
-// Create a new user
-exports.createUser = async (req, res) => {
-    try {
-        const { name, email, password } = req.body;
-
-        // Check if user already exists
-        const existingUser = await User.findOne({ email: email });
-        if (existingUser) {
-            return res.status(400).json({ message: 'Email account already exists' });
-        }
-
-        // Hash the user password
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        // Create a new user instance
-        const user = new User({
-            name: name,
-            email: email,
-            password: hashedPassword
-        });
-
-        // Save the new user
-        const newUser = await user.save();
-        res.status(201).json(newUser);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-};
 
 // Update a user
 exports.updateUser = async (req, res) => {

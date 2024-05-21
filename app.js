@@ -18,10 +18,14 @@ mongoose
 const productRoutes = require('./routes/product');
 const orderRoutes = require('./routes/order');
 const userRoutes = require('./routes/user');
+const authRoutes = require('./routes/auth'); // Import the new auth route
+
 
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes); // Use the auth route
+
 
 
 // Start the server
