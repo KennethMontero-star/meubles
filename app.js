@@ -16,19 +16,11 @@ mongoose
   .then(()=> console.log('Connected to MongoDB'))
   .catch(()=>console.error('Failed to connect to MongoDB'));
 
-//routes
-const productRoutes = require('./routes/product');
-const orderRoutes = require('./routes/order');
-const userRoutes = require('./routes/user');
-const authRoutes = require('./routes/auth'); // Import the new auth route
+const adminRoutes = require('./routes/admin');
+const customerRoutes = require('./routes/customer');
 
-
-app.use('/api/products', productRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/auth', authRoutes); // Use the auth route
-
-
+app.use('/api',customerRoutes);
+app.use('/api/admin',adminRoutes)
 
 // Start the server
 const port = process.env.PORT || 3000; // Use the port from the environment variables or default to 3000
