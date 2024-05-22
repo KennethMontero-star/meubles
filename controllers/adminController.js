@@ -90,7 +90,7 @@ exports.createProduct = async (req, res) => {
     try {
         const newProduct = new Product(req.body);
         await newProduct.save();
-        res.status(201).json(newProduct);
+        res.status(201).json({message:`${newProduct.name} created successfully`,newProduct});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -103,7 +103,7 @@ exports.updateProduct = async (req, res) => {
         if (!updatedProduct) {
             return res.status(404).json({ error: 'Product not found' });
         }
-        res.json(updatedProduct);
+        res.json({message: `${updatedProduct.name} updated successfully`,updatedProduct});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -116,7 +116,7 @@ exports.deleteProduct = async (req, res) => {
         if (!deletedProduct) {
             return res.status(404).json({ error: 'Product not found' });
         }
-        res.json({ message: 'Product deleted successfully' });
+        res.json({ message: 'Product deleted successfully' },deletedProduct);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

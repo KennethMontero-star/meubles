@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['chair', 'table', 'desk', 'bed'], // Specify the allowed categories
+        enum: ['chair', 'table', 'desk', 'bed'],
         required: true
     }
 });
