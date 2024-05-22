@@ -35,6 +35,10 @@ app.use('/register', (req, res) => {
 app.use('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
+app.use('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+});
+
 
 // Start the server
 const port = process.env.PORT || 3000; // Use the port from the environment variables or default to 3000
