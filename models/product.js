@@ -17,7 +17,11 @@ const productSchema = new mongoose.Schema({
         type: String,
         enum: ['chair', 'table', 'desk', 'bed'],
         required: true
+    },
+    image: {
+        data: Buffer,
+        contentType: String
     }
 });
 
-module.exports = mongoose.model('Product',productSchema);
+module.exports = mongoose.model('Product', productSchema);
