@@ -2,13 +2,18 @@ const Product = require("../models/product");
 const Order = require("../models/order");
 const Customer = require("../models/customer");
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+
+//where should i use this jwtSecret?
+const jwtSecret = process.env.JWT_SECRET;
+
+
 
 // Generate JWT function
 function generateToken(user) {
-    return jwt.sign({ userId: user._id }, 'secret', { expiresIn: '1h' });
+    return jwt.sign({ userId: user._id }, jwtSecret, { expiresIn: '1h' });
     // Replace 'secret' with your own secret key, and adjust expiresIn as needed
 }
-
 exports.register = async (req, res) => {
     try {
         const { username, password, email } = req.body;
@@ -17,11 +22,13 @@ exports.register = async (req, res) => {
         if (existingCustomer) {
             return res.status(400).json({ error: "Account already registered" });
         }
-        const newCustomer = new Customer({ username, password, email });
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10); // 10 is the salt rounds
+        const newCustomer = new Customer({ username, password: hashedPassword, email });
         await newCustomer.save();
         // Generate JWT
         const token = generateToken(newCustomer);
-        res.status(201).json({ token });
+        res.status(201).json({ token, newCustomer });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -35,17 +42,20 @@ exports.login = async (req, res) => {
         if (!customer) {
             return res.status(401).json({ error: "Invalid credentials" });
         }
-        // Check if the password is correct
-        if (password !== customer.password) {
+        // Compare hashed passwords
+        const passwordMatch = await bcrypt.compare(password, customer.password);
+        if (!passwordMatch) {
             return res.status(401).json({ error: "Invalid credentials" });
         }
         // Generate JWT
         const token = generateToken(customer);
-        res.json({ token });
+        // Send response with token and customer information
+        res.status(200).json({ message: 'Log in successfully',token, customer});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
+
 
 exports.getAllProducts = async (req, res) => {
     try {

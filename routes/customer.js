@@ -4,12 +4,9 @@ const customerController = require('../controllers/customerController');
 
 router.get('/products',customerController.getAllProducts);
 router.get('/products/category/:category',customerController.getProductsByCategory);
-
-// Routes requiring authentication
+router.post('/products/placeOrder',customerController.placeOrder);
 router.post('/register', customerController.register);
 router.post('/login', customerController.login);
-router.post('/cart', authenticateUser, customerController.addToCart);
-router.post('/checkout', authenticateUser, customerController.checkout);
 
 // Middleware to authenticate user
 function authenticateUser(req, res, next) {
