@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <title>Five Cards Layout</title>
+
+</head>
+<style>
+    h1,h2{
+        margin-top: 30px;
+        margin-bottom: 50px;
+        text-align: justify;
+        text-align: center;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .card {
+        width: 30%;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden; /* Ensure content doesn't overflow the card */
+    }
+    .card img {
+        width: 100%;
+        height: 300px; 
+        object-fit: fill; 
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .card-content {
+        padding: 20px;
+    }
+    .card-content h3 {
+        margin-top: 0;
+    }
+    .card-content p {
+        margin-bottom: 0;
+    }
+    .btn {
+        margin-top: 10px;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0cc05d;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="home.html">
+            <img src="Assets/LOGO.jpg" alt="JCKame Furniture Logo" class="logo-img">
+            JCKame Furniture
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <!-- Dropdowns -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="livingSpaceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        LIVING ROOM
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="livingSpaceDropdown">
+                        <a class="dropdown-item" href="#">Sofas</a>
+                        <a class="dropdown-item" href="#">TV Stands</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="diningDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        DINING SET
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="diningDropdown">
+                        <a class="dropdown-item" href="#">Dining Tables</a>
+                        <a class="dropdown-item" href="#">Dining Chairs</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="sleepShopDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        BEDROOM
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="sleepShopDropdown">
+                        <a class="dropdown-item" href="#">Beds</a>
+                        <a class="dropdown-item" href="#">Room Cabinet</a>
+                        <a class="dropdown-item" href="#">Desk</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">STORES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Customize.html">Customize</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">LOGIN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+                </li>
+                <!-- Cart Icon -->
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge badge-pill badge-danger" id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <H1>Cant Find What your'e Looking for?</H1>
+    <h2>Customize now </h2>
+
+    <div class="container">
+        <div class="card">
+            <img src="Assets/ProductPictures/door.jpg" alt="Card Image">
+            <div class="card-content">
+                <h3>Door</h3>
+                <p></p>
+                <a href="customizepage.html" class="btn">Customize</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Assets/ProductPictures/chairs.jpg" alt="Card Image">
+            <div class="card-content">
+                <h3>Chairs</h3>
+                <p></p>
+                <a href="customizepage.html" class="btn">Customize</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Assets/ProductPictures/cabinet.jpg" alt="Card Image">
+            <div class="card-content">
+                <h3>Cabinet</h3>
+                <p></p>
+                <a href="customizepage.html" class="btn">Customize</a>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="Pcontainer my-5">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="Assets/download_32.png" class="img-fluid" alt="Picture 1">
+                <h1>For Everyday Living</h1>
+                <p>We are more than just a foam company. Our products range from furniture to houseware and many more.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="Assets/custom.avif" class="img-fluid" alt="Picture 2">
+                <h1>We Customize</h1>
+                <p>Can't find the perfect furniture? We help you personalize furniture so you always get the perfect one.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="Assets/truck.avif" class="img-fluid" alt="Picture 3">
+                <h1>We Deliver</h1>
+                <p>From our store straight to your door, we deliver our products to you for a hassle-free shopping experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footercontainer text-center">
+            <p>&copy; 2024 JCKAME FURNITURE SHOP. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a> | <a href="#">Return & Exchange Policy</a></p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ItsmeJeyC" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <!-- Add more social icons as needed -->
+            </div>
+        </div>
+    </footer>
+
+    
+       
+    
+
+</body>
+</html>
