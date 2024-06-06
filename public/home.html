@@ -1,21 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Muebles</title>
-  <style>
-    body{
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Store</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <h1>Home Page - Mwebles</h1>
-  <p><em>This is a home page</em></p>
+    <!-- Navigation Section -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="home.html">
+            <img src="Assets/LOGO.jpg" alt="JCKame Furniture Logo" class="logo-img">
+            JCKame Furniture
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="livingSpaceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        LIVING ROOM
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="livingSpaceDropdown">
+                        <a class="dropdown-item" href="#">Sofas</a>
+                        <a class="dropdown-item" href="#">TV Stands</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="diningDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        DINING SET
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="diningDropdown">
+                        <a class="dropdown-item" href="#">Dining Tables</a>
+                        <a class="dropdown-item" href="#">Dining Chairs</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="sleepShopDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        BEDROOM
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="sleepShopDropdown">
+                        <a class="dropdown-item" href="#">Beds</a>
+                        <a class="dropdown-item" href="#">Room Cabinet</a>
+                        <a class="dropdown-item" href="#">Desk</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">STORES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">LOGIN</a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href=""><i class="fas fa-search"></i></a>
+                </li>
+               
+            </ul>
+        </div>
+    </nav>
+
+    <section class="banner">
+        <img src="Assets/ADS.jpg" class="img-fluid" alt="Banner Image">
+    </section>
+
+    <section class="text text-center my-5">
+        <div class="row">
+            <div class="col">
+                <h2>Welcome to JCKAME Furniture Store</h2>
+                <p>Discover the perfect blend of style and comfort for your home.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-4 product">
+                <div class="card">
+                    <img src="Assets/Livingroom.svg" class="card-img-top" alt="Product ">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Livingroom</h5>
+                        <p class="card-text">"Enrich Your Living Space: Wooden Elegance for Every Corner."</p>
+                        <a href="index.html" class="btn btn-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product">
+                <div class="card">
+                    <img src="Assets/DiningSet.svg" class="card-img-top" alt="Product ">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Dining Set</h5>
+                        <p class="card-text">"Gather, Feast, Cherish: Where Every Bite Tells a Story."</p>
+                        <a href="Drmp.html" class="btn btn-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product">
+                <div class="card">
+                    <img src="Assets/Bedroom.svg" class="card-img-top" alt="Product ">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bedroom</h5>
+                        <p class="card-text">"Where Comfort Meets Style: Your Bedroom, Your Sanctuary."</p>
+                        <a href="brd.html" class="btn btn-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="Pcontainer my-5">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="Assets/download_32.png" class="img-fluid" alt="Picture 1">
+                <h1>For Everyday Living</h1>
+                <p>We are more than just a foam company. Our products range from furniture to houseware and many more.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="Assets/custom.avif" class="img-fluid" alt="Picture 2">
+                <h1>We Customize</h1>
+                <p>Can't find the perfect furniture? We help you personalize furniture so you always get the perfect one.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="Assets/truck.avif" class="img-fluid" alt="Picture 3">
+                <h1>We Deliver</h1>
+                <p>From our store straight to your door, we deliver our products to you for a hassle-free shopping experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footercontainer text-center">
+            <p>&copy; 2024 JCKAME FURNITURE SHOP. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a> | <a href="#">Return & Exchange Policy</a></p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ItsmeJeyC" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <!-- Add more social icons as needed -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
