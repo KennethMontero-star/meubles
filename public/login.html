@@ -210,7 +210,7 @@
         <div class="title">Login</div>
         <div class="content">
             <!-- Login Form -->
-            <form id="loginForm">
+            <form id="loginForm" action="home.html" method="post">
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Email</span>
@@ -224,44 +224,11 @@
                 <div class="button">
                     <input type="submit" value="Login">
                 </div>
-                <p>Don't have an account? <span class="link-info" onclick="redirectToRegister()">Register here</span></p>
             </form>
+            
         </div>
     </div>
 
-    <script>
-        function redirectToRegister() {
-            window.location.href = 'register.html';
-        }
-
-        document.getElementById('loginForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            try {
-                const response = await fetch('/api/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ email, password })
-                });
-
-                if (!response.ok) {
-                    throw new Error(`Error: ${response.statusText}`);
-                }
-
-                const data = await response.json();
-                alert('Login successful!');
-
-                // Redirect the user to the home page
-                window.location.href = 'home.html';
-            } catch (error) {
-                alert('Login failed: ' + error.message);
-            }
-        });
-    </script>
+    
 </body>
 </html>
